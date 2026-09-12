@@ -1,0 +1,7 @@
+{
+  "schema": "codex_bridge_job_v1",
+  "requestId": "44444444-4444-4444-8444-444444444444",
+  "operation": "reply",
+  "relayJobRef": "rjob_syntheticreference00000001",
+  "prompt": "Apply the requested clarification and rerun the affected check."
+}

@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/younger404/chatgpt-codex-bridge/docs/specs/github-relay/job-schema-v1.json",
+  "title": "Codex Bridge Job V1",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/start"
+    },
+    {
+      "$ref": "#/$defs/reply"
+    },
+    {
+      "$ref": "#/$defs/publish"
+    },
+    {
+      "$ref": "#/$defs/query"
+    },
+    {
+      "$ref": "#/$defs/review"
+    }
+  ],
+  "$defs": {
+    "start": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "requestId",
+        "operation",
+        "repoAlias",
+        "taskName",
+        "prompt"
+      ],
+      "properties": {
+        "schema": {
+          "const": "codex_bridge_job_v1"
+        },
+        "requestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "operation": {
+          "const": "start"
+        },
+        "repoAlias": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,62}$"
+        },
+        "taskName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "prompt": {
+          "type": "string",
+          "maxLength": 262144
+        }
+      }
+    },
+    "reply": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "requestId",
+        "operation",
+        "relayJobRef",
+        "prompt"
+      ],
+      "properties": {
+        "schema": {
+          "const": "codex_bridge_job_v1"
+        },
+        "requestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "operation": {
+          "const": "reply"
+        },
+        "relayJobRef": {
+          "type": "string",
+          "pattern": "^rjob_[A-Za-z0-9_-]{20,64}$"
+        },
+        "prompt": {
+          "type": "string",
+          "maxLength": 262144
+        }
+      }
+    },
+    "publish": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "requestId",
+        "operation",
+        "relayJobRef",
+        "commitMessage"
+      ],
+      "properties": {
+        "schema": {
+          "const": "codex_bridge_job_v1"
+        },
+        "requestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "operation": {
+          "const": "publish"
+        },
+        "relayJobRef": {
+          "type": "string",
+          "pattern": "^rjob_[A-Za-z0-9_-]{20,64}$"
+        },
+        "commitMessage": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "pattern": "^[^\\u0000]+$"
+        }
+      }
+    },
+    "query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "requestId",
+        "operation",
+        "relayJobRef"
+      ],
+      "properties": {
+        "schema": {
+          "const": "codex_bridge_job_v1"
+        },
+        "requestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "operation": {
+          "const": "query"
+        },
+        "relayJobRef": {
+          "type": "string",
+          "pattern": "^rjob_[A-Za-z0-9_-]{20,64}$"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "requestId",
+        "operation",
+        "relayJobRef",
+        "evidenceRequestId",
+        "evidenceDigest",
+        "conclusion"
+      ],
+      "properties": {
+        "schema": {
+          "const": "codex_bridge_job_v1"
+        },
+        "requestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "operation": {
+          "const": "review"
+        },
+        "relayJobRef": {
+          "type": "string",
+          "pattern": "^rjob_[A-Za-z0-9_-]{20,64}$"
+        },
+        "evidenceRequestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "evidenceDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "conclusion": {
+          "enum": [
+            "accepted",
+            "changes_requested"
+          ]
+        }
+      }
+    }
+  }
+}

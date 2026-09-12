@@ -1,0 +1,24 @@
+name: offline-tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  portable-offline:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: portable offline suites
+        run: |
+          set -euo pipefail
+          /bin/zsh tests/portable/test-plugin-package.zsh
+          /bin/zsh tests/portable/test-public-sanitization.zsh
+          /bin/zsh tests/portable/test-github-relay-v1-install.zsh
+          /bin/zsh tests/portable/test-readme-demo.zsh
+          /bin/zsh tests/portable/test-macos-installer.zsh
+          /bin/zsh tests/portable/test-public-examples.zsh

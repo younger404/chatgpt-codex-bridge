@@ -1,0 +1,6 @@
+{
+  "schema": "codex_bridge_job_v1",
+  "requestId": "22222222-2222-4222-8222-222222222222",
+  "operation": "query",
+  "relayJobRef": "rjob_syntheticreference00000001"
+}

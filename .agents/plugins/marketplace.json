@@ -1,0 +1,20 @@
+{
+  "name": "chatgpt-codex-bridge",
+  "interface": {
+    "displayName": "ChatGPT Codex Bridge"
+  },
+  "plugins": [
+    {
+      "name": "chatgpt-codex-bridge",
+      "source": {
+        "source": "local",
+        "path": "./plugins/chatgpt-codex-bridge"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

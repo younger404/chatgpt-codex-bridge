@@ -1,0 +1,9 @@
+{
+  "schema": "codex_bridge_job_v1",
+  "requestId": "33333333-3333-4333-8333-333333333333",
+  "operation": "review",
+  "relayJobRef": "rjob_syntheticreference00000001",
+  "evidenceRequestId": "11111111-1111-4111-8111-111111111111",
+  "evidenceDigest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "conclusion": "changes_requested"
+}

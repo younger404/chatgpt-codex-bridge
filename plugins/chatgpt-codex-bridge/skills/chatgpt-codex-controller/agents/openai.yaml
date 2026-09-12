@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChatGPT Codex Bridge"
+  short_description: "Operate the ChatGPT-to-Codex bridge and long-running same-thread jobs"
+  default_prompt: "Use $chatgpt-codex-controller to install, verify, recover, or operate the ChatGPT-to-Codex bridge. Keep one ChatGPT conversation on one Codex thread, use codex-wait for long jobs, and use the bundled workspace-new-project Skill for new projects."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+{
+  "schema": "codex_bridge_job_v1",
+  "requestId": "55555555-5555-4555-8555-555555555555",
+  "operation": "publish",
+  "relayJobRef": "rjob_syntheticreference00000001",
+  "commitMessage": "test: synthetic relay publish example"
+}

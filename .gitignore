@@ -1,0 +1,3 @@
+.project-memory/
+__pycache__/
+*.pyc

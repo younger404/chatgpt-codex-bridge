@@ -1,0 +1,39 @@
+{
+  "name": "chatgpt-codex-bridge",
+  "version": "1.0.0-beta.1",
+  "description": "Create Codex projects through Secure MCP Tunnel or attach registered repositories through GitHub Relay V1.",
+  "author": {
+    "name": "larryppgg",
+    "url": "https://github.com/larryppgg"
+  },
+  "homepage": "https://github.com/younger404/chatgpt-codex-bridge",
+  "repository": "https://github.com/younger404/chatgpt-codex-bridge",
+  "license": "MIT",
+  "keywords": [
+    "chatgpt",
+    "codex",
+    "mcp",
+    "secure-tunnel"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ChatGPT Codex Bridge",
+    "shortDescription": "Supervise local Codex through GitHub Relay V1 or Secure MCP Tunnel.",
+    "longDescription": "Install, verify, and operate a per-device macOS bridge with new-project bootstrap, operator-registered existing repositories, isolated Git worktrees, controlled branch publishing, durable jobs, bounded waits, and same-conversation recovery.",
+    "developerName": "younger404",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write",
+      "Shell"
+    ],
+    "websiteURL": "https://github.com/younger404/chatgpt-codex-bridge",
+    "defaultPrompt": [
+      "Install this Mac's ChatGPT-to-Codex bridge.",
+      "Check whether my Codex tunnel bridge is ready.",
+      "Explain how one ChatGPT conversation delegates a long Codex job and receives its result."
+    ],
+    "brandColor": "#10A37F"
+  }
+}
